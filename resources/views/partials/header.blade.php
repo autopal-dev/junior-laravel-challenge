@@ -18,8 +18,7 @@
             <div class="collapse navbar-collapse" id="navbarNav">
                 <ul class="navbar-nav ms-auto">
                     <li class="nav-item">
-                        <a class="nav-link {{ request()->routeIs('todos.index') ? 'active' : '' }}"
-                            href="{{ route('todos.index') }}">
+                        <a class="nav-link" href="{{ route('todos.index') }}">
                             <i class="bi bi-list-check me-1"></i>All Todos
                         </a>
                     </li>

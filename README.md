@@ -1,66 +1,216 @@
-<p align="center"><a href="https://laravel.com" target="_blank"><img src="https://raw.githubusercontent.com/laravel/art/master/logo-lockup/5%20SVG/2%20CMYK/1%20Full%20Color/laravel-logolockup-cmyk-red.svg" width="400" alt="Laravel Logo"></a></p>
+# Junior Developer Challenge 🚀
 
-<p align="center">
-<a href="https://github.com/laravel/framework/actions"><img src="https://github.com/laravel/framework/workflows/tests/badge.svg" alt="Build Status"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/dt/laravel/framework" alt="Total Downloads"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/v/laravel/framework" alt="Latest Stable Version"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/l/laravel/framework" alt="License"></a>
-</p>
+Welcome! This coding challenge tests your **programming and problem-solving skills**. Don't worry if you're new to Laravel or PHP - the existing code serves as a good example to learn from!
 
-## About Laravel
+## 📋 Your Task
 
-Laravel is a web application framework with expressive, elegant syntax. We believe development must be an enjoyable and creative experience to be truly fulfilling. Laravel takes the pain out of development by easing common tasks used in many web projects, such as:
+The app already has a working Todo list. **Your job is to add a new "Summary" page** that shows:
 
-- [Simple, fast routing engine](https://laravel.com/docs/routing).
-- [Powerful dependency injection container](https://laravel.com/docs/container).
-- Multiple back-ends for [session](https://laravel.com/docs/session) and [cache](https://laravel.com/docs/cache) storage.
-- Expressive, intuitive [database ORM](https://laravel.com/docs/eloquent).
-- Database agnostic [schema migrations](https://laravel.com/docs/migrations).
-- [Robust background job processing](https://laravel.com/docs/queues).
-- [Real-time event broadcasting](https://laravel.com/docs/broadcasting).
+### Requirements for `/summary` page:
+1. **Total number of todos**
+2. **Number of completed vs. pending todos**
+3. **Completion percentage** (as a progress bar or text)
+4. **List of todos due in the next 30 days**
+5. **A button/link** to access this page from the main todo list (for example in header or near "Create New Todo" button)
 
-Laravel is accessible, powerful, and provides tools required for large, robust applications.
+### What We're Testing:
+- Problem-solving approach
+- Reading and understanding existing code
+- Working with databases
+- Displaying data in a web page
+- Basic web development patterns (MVC)
 
-## Learning Laravel
+---
 
-Laravel has the most extensive and thorough [documentation](https://laravel.com/docs) and video tutorial library of all modern web application frameworks, making it a breeze to get started with the framework.
+## 🛠️ Setup Instructions
 
-You may also try the [Laravel Bootcamp](https://bootcamp.laravel.com), where you will be guided through building a modern Laravel application from scratch.
+### Prerequisites
 
-If you don't feel like reading, [Laracasts](https://laracasts.com) can help. Laracasts contains thousands of video tutorials on a range of topics including Laravel, modern PHP, unit testing, and JavaScript. Boost your skills by digging into our comprehensive video library.
+You'll need PHP and Composer installed. Choose one option:
 
-## Laravel Sponsors
+**Option A: Laravel Herd** (Easiest - Windows/Mac)
+- Download from [herd.laravel.com](https://herd.laravel.com)
+- Includes PHP, Composer, and automatic site management
 
-We would like to extend our thanks to the following sponsors for funding Laravel development. If you are interested in becoming a sponsor, please visit the [Laravel Partners program](https://partners.laravel.com).
+**Option B: Manual Setup**
+- Install [PHP 8.1+](https://www.php.net/downloads)
+- Install [Composer](https://getcomposer.org/download/)
 
-### Premium Partners
+### 1. Clone This Repository
 
-- **[Vehikl](https://vehikl.com/)**
-- **[Tighten Co.](https://tighten.co)**
-- **[WebReinvent](https://webreinvent.com/)**
-- **[Kirschbaum Development Group](https://kirschbaumdevelopment.com)**
-- **[64 Robots](https://64robots.com)**
-- **[Curotec](https://www.curotec.com/services/technologies/laravel/)**
-- **[Cyber-Duck](https://cyber-duck.co.uk)**
-- **[DevSquad](https://devsquad.com/hire-laravel-developers)**
-- **[Jump24](https://jump24.co.uk)**
-- **[Redberry](https://redberry.international/laravel/)**
-- **[Active Logic](https://activelogic.com)**
-- **[byte5](https://byte5.de)**
-- **[OP.GG](https://op.gg)**
+**In GitHub:**
+1. Click the "Fork" button (top right) to create your own copy
+2. On your forked repository, click the green "Code" button
+3. Copy the URL
 
-## Contributing
+**In your terminal:**
+```bash
+git clone <your-forked-repo-url>
+cd junior-laravel-challenge
+```
 
-Thank you for considering contributing to the Laravel framework! The contribution guide can be found in the [Laravel documentation](https://laravel.com/docs/contributions).
+### 2. Install Dependencies
+```bash
+composer install
+```
 
-## Code of Conduct
+### 3. Environment Setup
+```bash
+# Copy environment file
+cp .env.example .env
 
-In order to ensure that the Laravel community is welcoming to all, please review and abide by the [Code of Conduct](https://laravel.com/docs/contributions#code-of-conduct).
+# Generate app key (required for Laravel)
+php artisan key:generate
+```
 
-## Security Vulnerabilities
+The project uses **SQLite** (database file already included). No additional database setup needed!
 
-If you discover a security vulnerability within Laravel, please send an e-mail to Taylor Otwell via [taylor@laravel.com](mailto:taylor@laravel.com). All security vulnerabilities will be promptly addressed.
+### 4. Run Migrations & Seed Data
+```bash
+php artisan migrate:fresh --seed
+```
 
-## License
+This creates the todos table and adds sample data (some with due dates in the next 30 days).
 
-The Laravel framework is open-sourced software licensed under the [MIT license](https://opensource.org/licenses/MIT).
+### 5. Start the Development Server
+
+**If using Laravel Herd:**
+- In Herd, click "Park" and select your projects directory
+- Access at: `http://junior-laravel-challenge.test`
+
+**If using PHP directly:**
+```bash
+php artisan serve
+```
+- Access at: `http://localhost:8000`
+
+### 6. Verify Everything Works
+Visit the URL - you should see a working todo list with sample tasks. ✅
+
+---
+
+## 📁 Project Structure
+
+Here's what you need to know:
+
+```
+app/
+├── Http/Controllers/
+│   └── TodoController.php     # Controller logic - add your summary() method here
+└── Models/
+    └── Todo.php                # Database model for todos
+
+routes/
+└── web.php                     # URL routes - add your /summary route here
+
+resources/views/
+├── layouts/
+│   └── app.blade.php          # Main page layout (header, footer, etc.)
+├── partials/
+│   └── header.blade.php       # Reusable header component
+└── todos/
+    ├── index.blade.php        # Existing todo list page (use as example!)
+    └── summary.blade.php      # YOU CREATE THIS for the summary page
+
+public/css/
+└── app.css                    # Styles (Bootstrap 5.3 + custom CSS)
+```
+
+### Quick Concept Guide:
+
+**Routes** (`routes/web.php`): Define URLs and what controller method handles them
+```php
+Route::get('/summary', [TodoController::class, 'summary'])->name('todos.summary');
+```
+
+**Controllers** (`app/Http/Controllers/TodoController.php`): Handle requests and return views
+```php
+public function summary() {
+    // Get data from database
+    // Return a view with that data
+}
+```
+
+**Models** (`app/Models/Todo.php`): Interact with database tables
+- The `Todo` model represents the `todos` table
+- Use it to query data (examples in TodoController)
+
+**Views** (`resources/views/`): HTML templates that display data
+- Create your view by extending the main layout:
+```blade
+@extends('layouts.app')
+
+@section('title', 'Summary')
+
+@section('content')
+    <!-- Your HTML here -->
+@endsection
+```
+
+---
+
+## 💡 What You'll Need to Figure Out
+
+### Database Queries
+You'll need to count todos, filter by status, and find todos due in the next 30 days. 
+
+**What is Eloquent?**  
+Laravel's Eloquent ORM (Object-Relational Mapping) lets you work with database tables using PHP objects instead of writing SQL. Look at how `TodoController.php` already uses the `Todo` model for examples.
+
+**Helpful docs:**
+- [Eloquent Basics](https://laravel.com/docs/10.x/eloquent)
+- [Query Builder](https://laravel.com/docs/10.x/queries)
+- [Date Comparisons](https://laravel.com/docs/10.x/queries#where-clauses)
+
+### Percentage Calculation
+How do you calculate what percentage of todos are completed? Think about edge cases (what if there are 0 todos?).
+
+### Displaying a Progress Bar
+Bootstrap (already included) has built-in [progress bar components](https://getbootstrap.com/docs/5.3/components/progress/).
+
+---
+
+## 📚 Resources
+
+- [Laravel 10 Documentation](https://laravel.com/docs/10.x) - Your main reference
+- [Blade Templates](https://laravel.com/docs/10.x/blade) - For creating views
+- [Eloquent ORM](https://laravel.com/docs/10.x/eloquent) - For database queries
+- [Bootstrap 5.3](https://getbootstrap.com/docs/5.3/) - For styling
+- [Bootstrap Icons](https://icons.getbootstrap.com/) - For icons
+
+**Pro tip:** Look at the existing `TodoController.php` and `index.blade.php` files - they show you how everything works!
+
+---
+
+## 📤 Submission
+
+When you're done:
+
+1. **Commit your changes** with clear commit messages:
+```bash
+git add .
+git commit -m "Add summary page with statistics and upcoming todos"
+```
+
+2. **Push to your GitHub repository:**
+```bash
+git push origin main
+```
+
+3. **Send us the link** to your GitHub repository
+
+---
+
+## ❓ Need Help?
+
+**Stuck on something?** That's totally normal! Feel free to:
+- Contact us directly - we're here to help juniors learn
+- Check the existing code for examples
+- Read the Laravel docs
+- Google specific errors
+
+We're interested in seeing your problem-solving approach, not perfection!
+
+---
+
+Good luck! We're excited to see your solution. 🎉
