@@ -1,4 +1,4 @@
-# Junior Developer Challenge 🚀
+# Junior Laravel Developer Challenge 🚀
 
 Welcome! This coding challenge tests your **programming and problem-solving skills**. Don't worry if you're new to Laravel or PHP - the existing code serves as a good example to learn from!
 
@@ -12,13 +12,6 @@ The app already has a working Todo list. **Your job is to add a new "Summary" pa
 3. **Completion percentage** (as a progress bar or text)
 4. **List of todos due in the next 30 days**
 5. **A button/link** to access this page from the main todo list (for example in header or near "Create New Todo" button)
-
-### What We're Testing:
-- Problem-solving approach
-- Reading and understanding existing code
-- Working with databases
-- Displaying data in a web page
-- Basic web development patterns (MVC)
 
 ---
 
@@ -163,7 +156,7 @@ Laravel's Eloquent ORM (Object-Relational Mapping) lets you work with database t
 - [Date Comparisons](https://laravel.com/docs/10.x/queries#where-clauses)
 
 ### Percentage Calculation
-How do you calculate what percentage of todos are completed? Think about edge cases (what if there are 0 todos?).
+How do you calculate what percentage of todos are completed? Sounds like a simple math, doesn't it?
 
 ### Displaying a Progress Bar
 Bootstrap (already included) has built-in [progress bar components](https://getbootstrap.com/docs/5.3/components/progress/).
