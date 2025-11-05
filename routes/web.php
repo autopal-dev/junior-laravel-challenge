@@ -16,3 +16,7 @@ use Illuminate\Support\Facades\Route;
 
 Route::get('/', [TodoController::class, 'index'])->name('todos.index');
 Route::get('/todos', [TodoController::class, 'index']);
+Route::post('/todos', [TodoController::class, 'store'])->name('todos.store');
+Route::patch('/todos/{todo}/complete', [TodoController::class, 'complete'])->name('todos.complete');
+Route::patch('/todos/{todo}/uncomplete', [TodoController::class, 'uncomplete'])->name('todos.uncomplete');
+Route::delete('/todos/{todo}', [TodoController::class, 'destroy'])->name('todos.destroy');
