@@ -19,15 +19,10 @@ The app already has a working Todo list. **Your job is to add a new "Summary" pa
 
 ### Prerequisites
 
-You'll need PHP and Composer installed. Choose one option:
-
-**Option A: Laravel Herd** (Easiest - Windows/Mac)
-- Download from [herd.laravel.com](https://herd.laravel.com)
+**Laravel Herd** (Windows/Mac)
+- Download and install from [herd.laravel.com](https://herd.laravel.com)
 - Includes PHP, Composer, and automatic site management
-
-**Option B: Manual Setup**
-- Install [PHP 8.1+](https://www.php.net/downloads)
-- Install [Composer](https://getcomposer.org/download/)
+- **Important:** Set PHP version to 8.2 in Herd settings
 
 ### 1. Clone This Repository
 
@@ -67,15 +62,9 @@ This creates the todos table and adds sample data (some with due dates in the ne
 
 ### 5. Start the Development Server
 
-**If using Laravel Herd:**
-- In Herd, click "Park" and select your projects directory
-- Access at: `http://junior-laravel-challenge.test`
+In Herd, click "Park" and select your projects directory (the one containing this project).
 
-**If using PHP directly:**
-```bash
-php artisan serve
-```
-- Access at: `http://localhost:8000`
+Access your site at: `http://junior-laravel-challenge.test`
 
 ### 6. Verify Everything Works
 Visit the URL - you should see a working todo list with sample tasks. ✅
