@@ -22,7 +22,6 @@ The app already has a working Todo list. **Your job is to add a new "Summary" pa
 **Laravel Herd** (Windows/Mac)
 - Download and install from [herd.laravel.com](https://herd.laravel.com)
 - Includes PHP, Composer, and automatic site management
-- **Important:** Set PHP version to 8.2 in Herd settings
 - Terminal should be restarted after Herd installation, if opened
 
 ### 1. Clone This Repository
@@ -46,7 +45,7 @@ composer install
 ### 3. Environment Setup
 ```bash
 # Copy environment file
-# Windows:
+# Windows (CMD):
 copy .env.example .env
 # Mac/Linux:
 # cp .env.example .env
@@ -60,7 +59,7 @@ php artisan key:generate
 The project uses SQLite for the database. You need to create an empty database file before running migrations:
 
 ```bash
-# Windows:
+# Windows (CMD):
 type nul > database\database.sqlite
 # Mac/Linux:
 # touch database/database.sqlite
